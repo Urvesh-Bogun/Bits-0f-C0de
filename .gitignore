@@ -46,4 +46,4 @@ Thumbs.db
 node_modules
 
 .env.local
->>>>>>> 4bdced8 (Restructured file hierarchy)
+.next
