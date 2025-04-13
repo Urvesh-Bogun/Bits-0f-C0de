@@ -1,6 +1,3 @@
-import { SiTwitter, SiGithub, SiInstagram } from "react-icons/si";
-import { FiLinkedin } from "react-icons/fi";
-
 function Footer() {
   const date = new Date();
   const year = date.getFullYear();
