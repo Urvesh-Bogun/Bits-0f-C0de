@@ -28,8 +28,8 @@ function about({ topics }) {
           ! Nice to meet you.
         </h2>
         <p className="text-gray-600 mt-4 dark:text-indigo-200">
-          I am an aspiring Security Engineer currently pursuing an MSci in InfoSec at RHUL.
-           My field of Interest's are securing hybrid environments in AWS and also in areas related to FinTech.
+          I am an aspiring Security Engineer currently pursuing an MSci in InfoSec at Royal Holloway, University of London.
+           My field of Interests are securing hybrid environments in AWS, as well as areas related to FinTech.
         </p>
 
         <div className="text-center pt-8">
@@ -38,7 +38,7 @@ function about({ topics }) {
             <a
               rel="noopener noreferrer"
               target="_blank"
-              href="https://urvesh-bogun.github.io/Portfolio/"
+              href="https://urvesh-bogun.github.io/Portfolio/project"
             >
               See My Works
             </a>
