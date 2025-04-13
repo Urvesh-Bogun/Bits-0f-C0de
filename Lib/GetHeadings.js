@@ -1,27 +1,30 @@
 export async function getHeadings(source) {
-  const lines = source.split("\n").filter(line => /^#{2,3}\s/.test(line));
+  // Get each line individually, and filter out anything that
+  // isn't a heading.
+  const headingLines = source.split("\n").filter((line) => {
+    return line.match(/^###*\s/);
+  });
 
-  return lines.map((line, index) => {
-    // Extract custom ID if it exists
-    const idMatch = line.match(/\{#([^\}]+)\}/);
-    const customId = idMatch ? idMatch[1] : null;
+  // Transform the string '## Some text' into an object
+  // with the shape '{ text: 'Some text', level: 2 }'
 
-    // Get the plain heading text
-    const text = line
-      .replace(/^#{2,3}\s/, "")
-      .replace(/\s*\{#.*\}/, "")
+  let uid = 1000;
+  return headingLines.map((raw) => {
+    const text = raw
+      .replace(/^###*\s/, "")
+      .replace(/ *\{[^)]*\} */g, "")
       .trim();
+    // I only care about h2 and h3.
+    // If I wanted more levels, I'd need to count the
+    // number of #s.
+    const id = text
+      .replace(/[&\/\\#,+()$~%'":*?<>{}]/g, "")
+      .trim()
+      .split(" ")
+      .join("-");
 
-    // If no custom ID, generate one from the text
-    const id = customId || text.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
-
-    const level = line.startsWith("###") ? 3 : 2;
-
-    return {
-      text,
-      level,
-      id,
-      uid: 1000 + index,
-    };
+    const level = raw.slice(0, 3) === "###" ? 3 : 2;
+    uid++;
+    return { text, level, id, uid };
   });
 }
