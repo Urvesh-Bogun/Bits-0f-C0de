@@ -1,24 +1,24 @@
-import { FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 function BlogShare({ data }) {
+  const postUrl = `https://sudo-rm-rf-blog.vercel.app/blogs/${String(
+    data.Title.split(" ").join("-").toLowerCase()
+  )}`;
+
   return (
     <>
       <div className="text-center pb-4">
         <button className="bg-indigo-500 px-3 py-1 font-semibold text-white inline-flex items-center space-x-2 rounded">
-          <FaTwitter />
+          <FaLinkedin />
           <a
-            className="twitter-share-button"
+            className="linkedin-share-button"
             rel="noopener noreferrer"
             target="_blank"
-            href={`https://twitter.com/intent/tweet?text=${
-              data.Title
-            } by @soumyajit4419
-            &url=blogs.soumya-jit.tech/blogs/${String(
-              data.Title.split(" ").join("-").toLowerCase()
-            )}
-            &hashtags=${data.Tags.split(" ")}`}
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+              postUrl
+            )}`}
           >
-            Tweet
+            Share
           </a>
         </button>
       </div>
