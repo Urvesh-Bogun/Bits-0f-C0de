@@ -6,10 +6,10 @@ export async function getHeadings(source) {
     const idMatch = line.match(/\{#([^\}]+)\}/);
     const customId = idMatch ? idMatch[1] : null;
 
-    // Get the plain heading text
+    // Get the plain heading text (remove ##, ###, and {#...})
     const text = line
-      .replace(/^#{2,3}\s/, "")
-      .replace(/\s*\{#.*\}/, "")
+      .replace(/^#{2,3}\s/, "")        // remove ## or ###
+      .replace(/\s*\{#.*\}/, "")       // remove {#...}
       .trim();
 
     // If no custom ID, generate one from the text
