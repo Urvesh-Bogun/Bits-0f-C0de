@@ -24,7 +24,7 @@ export default async (req, res) => {
       const hash = bcrypt.hashSync(clientIp, salt);
       likeRef.add({ userIp: hash });
     } else {
-      const res = await likeRef.doc(docId).delete();
+      await likeRef.doc(docId).delete();
     }
     res.status(200).json({ message: "Successful" });
   } else {
