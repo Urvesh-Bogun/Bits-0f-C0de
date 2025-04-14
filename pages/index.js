@@ -21,10 +21,10 @@ export default function Home({ blogs, topics }) {
     <>
       <Head>
         <title>sudo rm -rf /blog</title>
-        <meta name="title" content="sudo rm -rf /blog" />
+        <meta name="title" content="sudo rm -rf /blog"/>
         <meta
           name="description"
-          content="Tech blogs and articles on various topics related to Software Development"
+          content="Articles and reports on various topics related to InfoSec"
         />
 
         <meta property="og:type" content="website" />
