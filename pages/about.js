@@ -38,7 +38,7 @@ function about({ topics }) {
             <a
               rel="noopener noreferrer"
               target="_blank"
-              href="https://urvesh-bogun.github.io/Portfolio/project"
+              href="https://urvesh-bogun.github.io/Portfolio/"
             >
               See My Works
             </a>
