@@ -55,29 +55,10 @@ export const getStaticProps = async (context) => {
 function id({ data, content, id, headings, topics }) {
   return (
     <>
-      <Head>
-        <title>{data.Title}</title>
-        <meta name="title" content={data.Title} />
-        <meta name="description" content={data.Abstract} />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://blogs.soumya-jit.tech/" />
-        <meta property="og:title" content={data.Title} />
-        <meta property="og:description" content={data.Abstract} />
-        <meta
-          property="og:image"
-          content={`https://raw.githubusercontent.com/soumyajit4419/Bits-0f-C0de/main/public${data.HeaderImage}`}
-        />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://blogs.soumya-jit.tech/" />
-        <meta property="twitter:title" content={data.Title} />
-        <meta property="twitter:description" content={data.Abstract} />
-        <meta
-          property="twitter:image"
-          content={`https://raw.githubusercontent.com/soumyajit4419/Bits-0f-C0de/main/public${data.HeaderImage}`}
-        />
-      </Head>
+    <Head>
+      <title>{data.Title}</title>
+      <meta name="description" content={data.Abstract} />
+    </Head>
 
       <div className="min-h-screen relative bg-white dark:bg-gray-900">
         <Navbar topics={topics} />
