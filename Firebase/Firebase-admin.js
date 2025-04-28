@@ -1,10 +1,11 @@
-var admin = require("firebase-admin");
+let admin;
 
-if (!admin.apps.length) {
+if (!admin?.apps?.length) {
+  admin = require('firebase-admin');
   admin.initializeApp({
     credential: admin.credential.cert({
       client_email: process.env.FIREBASE_CLIENT_EMAIL,
-      private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+      private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
       project_id: process.env.FIREBASE_PROJECT_ID,
     }),
     databaseURL: process.env.FIREBASE_DATABASE_URL,
