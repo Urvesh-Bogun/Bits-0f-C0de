@@ -50,6 +50,7 @@ export default function Home({ blogs, topics }) {
           property="twitter:image"
           content="https://raw.githubusercontent.com/soumyajit4419/Bits-0f-C0de/main/Extra/sc.png"
         />
+        <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
 
       <div className="min-h-screen relative bg-white dark:bg-gray-900">
